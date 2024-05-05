@@ -1,8 +1,8 @@
 import { Song } from "../../types";
 
+import useAuthModal from "./useAuthModal";
 import usePlayer from "./usePlayer";
 import useSubscribeModal from "./useSubscribeModal";
-import useAuthModal from "./useAuthModal";
 import { useUser } from "./useUser";
 
 const useOnPlay = (songs: Song[]) => {
@@ -16,9 +16,9 @@ const useOnPlay = (songs: Song[]) => {
       return authModal.onOpen();
     }
 
-    if (!subscription) {
-      return subscribeModal.onOpen();
-    }
+    // if (!subscription) {
+    //   return subscribeModal.onOpen();
+    // }
 
     player.setId(id);
     player.setIds(songs.map((song) => song.id));
